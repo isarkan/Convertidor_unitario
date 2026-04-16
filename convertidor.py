@@ -37,7 +37,10 @@ def longitud_page():
         valor = float(request.form["valor"])
         de = request.form["de"]
         a = request.form["a"]
+
         resultado = convertir_generico(valor, de, a, longitud)
+        resultado = f"{resultado:,.0f}".replace(",", ".")
+
     return render_template("longitud.html", resultado=resultado)
 
 
@@ -49,12 +52,15 @@ def peso_page():
         de = request.form["de"]
         a = request.form["a"]
         resultado = convertir_generico(valor, de, a, peso)
+        resultado = f"{resultado:,.0f}".replace(",", ".")
+
     return render_template("peso.html", resultado=resultado)
 
 
 @convertidor.route("/temperatura", methods=["GET", "POST"])
 def temperatura_page():
     resultado = None
+
     if request.method == "POST":
         valor = float(request.form["valor"])
         de = request.form["de"]
@@ -75,8 +81,10 @@ def temperatura_page():
         else:
             resultado = valor
 
-    return render_template("temperatura.html", resultado=resultado)
+        # ✅ Formato colombiano
+        resultado = f"{resultado:,.0f}".replace(",", ".")
 
+    return render_template("temperatura.html", resultado=resultado)
 
 if __name__ == "__main__":
     convertidor.run(debug=True)

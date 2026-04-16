@@ -2,7 +2,7 @@
 {% block content %}
 <div class="container">
     <div class="box">
-        <h1>Unit Converter</h1>
+        <h1>Convertidor Unitario</h1>
         <div class="tabs">
             <a href="/" class="active">Longitud</a>
             <a href="/peso">Peso</a>
@@ -45,7 +45,7 @@
 
         {% if resultado is not none %}
             <p>Resultado de tu cálculo</p>
-            <div class="result">{{ resultado|round(2) }}</div>
+            <div class="result">{{ resultado }}</div>
         {% endif %}
     </div>
 </div>
