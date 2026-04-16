@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="box">
+        <h1>Unit Converter</h1>
+        <div class="tabs">
+            <a href="/" class="active">Length</a>
+            <a href="/peso">Weight</a>
+            <a href="/temperatura">Temperature</a>
+        </div>
+
+        <form method="POST">
+            <label>Ingrese la longitud</label>
+            <input type="number" step="any" name="valor" required>
+
+            <label>Unidad origen</label>
+            <select name="de">
+                <option>C</option><option>F</option><option>K</option>
+            </select>
+
+            <label>Unidad destino</label>
+            <select name="a">
+                <option>C</option><option>F</option><option>K</option>
+            </select>
+
+            <button type="submit">Convert</button>
+        </form>
+    </div>
+
+    <div class="box">
+        <h1>Unit Converter</h1>
+        <div class="tabs">
+            <a href="/" class="active">Length</a>
+            <a href="/peso">Weight</a>
+            <a href="/temperatura">Temperature</a>
+        </div>
+
+        {% if resultado is not none %}
+            <p>Resultado de tu cálculo</p>
+            <div class="result">{{ resultado|round(2) }}</div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

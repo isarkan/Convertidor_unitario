@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+            width: 90%;
+            margin: 30px auto;
+        }
+        .box {
+            flex: 1;
+            background: white;
+            border: 2px solid #333;
+            border-radius: 10px;
+            padding: 30px;
+            min-height: 500px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .tabs a {
+            margin-right: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            color: black;
+        }
+        .tabs a.active {
+            color: blue;
+            border-bottom: 2px solid blue;
+        }
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 2px solid #333;
+        }
+        button {
+            margin-top: 15px;
+            padding: 12px 25px;
+            border-radius: 8px;
+            border: 2px solid #333;
+            background: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .result {
+            font-size: 40px;
+            font-weight: bold;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    {% block content %}{% endblock %}
+</body>
+</html>
